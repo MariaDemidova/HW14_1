@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 public class ArraysForExTest {
     @ParameterizedTest
     @MethodSource("newArrAfter4Test")
-    void newArrAfter4(int[] resultArray, int[] testArray) {
+    void shouldBeNewArrAfter4(int[] resultArray, int[] testArray) {
         Assertions.assertArrayEquals(resultArray, ArraysForEx.newArrAfter4(testArray));
     }
 
@@ -25,13 +25,13 @@ public class ArraysForExTest {
     }
 
     @Test
-    void newArrAfter4RunTimeException() {
+    void shouldThrowRunTimeExceptionNotNewArrAfter4() {
         Assertions.assertThrows(RuntimeException.class, () -> ArraysForEx.newArrAfter4(new int[]{6, 3, 2, 6, 6, 2, 2, 6, 6}));
     }
 
     @ParameterizedTest
     @MethodSource("paramsFoundOneOr4")
-    void FoundOneOr4(boolean result, int[] inputArray) {
+    void shouldFound4or1(boolean result, int[] inputArray) {
         Assertions.assertEquals(result, ArraysForEx.foundOneOr4(inputArray));
     }
 
